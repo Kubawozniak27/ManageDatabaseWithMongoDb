@@ -1,20 +1,23 @@
 ﻿@model ElectronicShops.Models.Description
 
 @{
-    ViewBag.Title = "PostDescription";
+    ViewBag.Title = "Post";
 }
 
-<h2>PostDescription</h2>
+<h2>Dodaj</h2>
+
+
+
+
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Description</h4>
         <hr />
-        @Html.HiddenFor(model => model.ProductId)
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
             @Html.LabelFor(model => model.Opis, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -22,6 +25,8 @@
                 @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -32,5 +37,13 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Wróć do listy", "Description")
 </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+   
+}

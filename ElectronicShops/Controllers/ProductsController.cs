@@ -26,7 +26,6 @@ namespace ElectronicShops.Controllers
         {
             ViewBag.CurrentSort = sortOrder;
 
-
             ViewBag.TypeSort = String.IsNullOrEmpty(sortOrder) ? "type_desc" : "";
             ViewBag.ModelSort = sortOrder == "modelsort" ? "modelsort_desc" : "modelsort";
             ViewBag.ProducentSort = sortOrder == "producentsort" ? "producentsort_desc" : "producentsort";
@@ -107,7 +106,7 @@ namespace ElectronicShops.Controllers
         [HttpPost]
         public ActionResult Post(PostProduct product)
         {
-            var item = new Product(product);            
+            var item = new Product(product);   
             context.Products.Insert(item);
             return RedirectToAction("Index");
         }
@@ -149,34 +148,38 @@ namespace ElectronicShops.Controllers
         [HttpGet]
         public ActionResult Description(string id)
         {
+
             var product = GetProduct(id);
 
 
+            if (product.Description == null)
+            {
+                Description descri = new Description();
+                product.Description = descri;
+                context.Products.Save(product);
+            }
 
-            product.Description.ProductId = id;
-
-            return View(product.Description);
-
-           
+            return View(product);           
         }
 
 
         [HttpGet]
-        public ActionResult PostDescription(string id)
+        public ActionResult PostDescription()
         {
-            var item = GetProduct(id);
 
-            return View(item.Description);
+            return View();
 
         }
 
 
         [HttpPost]
-        public ActionResult PostDescription(string id,Description opis)
+        public ActionResult PostDescription(string id, Description descri)
         {
             var item = GetProduct(id);
-            item.Description = opis;
-            context.Products.Insert(item);
+            Description description = new Description(descri);
+            item.Description = description;
+
+            context.Products.Save(item);
             return RedirectToAction("Index");
         }
 

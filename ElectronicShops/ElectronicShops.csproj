@@ -274,6 +274,7 @@
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\GetProductsByFilter.cshtml" />
     <Content Include="Views\Products\Description.cshtml" />
+    <Content Include="Views\Products\_DescriptionParitialView.cshtml" />
     <Content Include="Views\Products\PostDescription.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -35,23 +35,19 @@ namespace ElectronicShops.Models
 
         public Description Description { get; set; }
 
-
-
         public Product()
         { }
 
         public  Product(PostProduct postProduct)
-        {
-           
+        {         
             this.Category = postProduct.Category;
             this.Producent = postProduct.Producent;
             this.Model = postProduct.Model;
             this.Price = postProduct.Price;
-            this.Quality = postProduct.Quality;
-            this.Description = new Description();
-
-            
+            this.Quality = postProduct.Quality;             
         }
+
+        
       
     }
 }

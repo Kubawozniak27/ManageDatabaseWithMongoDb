@@ -9,18 +9,19 @@ namespace ElectronicShops.Models
 {
     public class Description
     {
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string ProductId { get; set; }
-        public string Opis { get; set; }
-
-        
-        
-
-        public Description()
+        public String Opis { get; set; }
+        public Description(string Opis)
         {
-          
+            this.Opis = Opis;
         }
 
+        public Description()
+        {}
+
+        public Description(Description description)
+        {
+            this.Opis = description.Opis;
+        }
 
     }
 }

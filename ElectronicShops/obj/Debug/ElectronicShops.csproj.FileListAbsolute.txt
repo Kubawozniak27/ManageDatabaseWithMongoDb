@@ -75,7 +75,6 @@ C:\Users\Kuba\Documents\Visual Studio 2015\Projects\ElectronicShops\ElectronicSh
 C:\Users\Kuba\Documents\Visual Studio 2015\Projects\ElectronicShops\ElectronicShops\bin\PagedList.Mvc.dll
 C:\Users\Kuba\Documents\Visual Studio 2015\Projects\ElectronicShops\ElectronicShops\bin\PagedList.xml
 C:\Users\Kuba\Documents\Visual Studio 2015\Projects\ElectronicShops\ElectronicShops\bin\PagedList.Mvc.xml
-C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\obj\Debug\ElectronicShops.csprojResolveAssemblyReference.cache
 C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\obj\Debug\ElectronicShops.dll
 C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\obj\Debug\ElectronicShops.pdb
 C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\bin\roslyn\csc.exe
@@ -152,3 +151,4 @@ C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\bin\Microsoft.Owin.Securit
 C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Kuba\Desktop\ElectronicShops\ElectronicShops\obj\Debug\ElectronicShops.csprojResolveAssemblyReference.cache

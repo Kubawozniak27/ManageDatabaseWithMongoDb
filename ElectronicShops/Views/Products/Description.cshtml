@@ -1,31 +1,23 @@
-﻿@model ElectronicShops.Models.Description
+﻿@model  ElectronicShops.Models.Product
 
 @{
     ViewBag.Title = "Description";
 }
 
+<br />
+<br />
 
 <p>
-    @Html.ActionLink("Dodaj nowy", "PostDescription","Products", new { id = Model.ProductId })
+    @Html.ActionLink("Dodaj nowy", "PostDescription","Products", new { id = Model.Id}, null)
 </p>
-<h2>Description</h2>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Opis)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Opis)
-        </dd>
+@Html.Partial("_DescriptionParitialView",Model.Description)
 
-        
 
-    </dl>
-</div>
+
+
+
 <p>
     
     @Html.ActionLink("Back to List", "Index")
