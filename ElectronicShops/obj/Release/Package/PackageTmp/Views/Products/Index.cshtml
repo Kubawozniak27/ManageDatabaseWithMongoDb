@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ElectronicShops.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Produkty</h2>
+
+<p>
+    @Html.ActionLink("Dodaj nowy", "Post")
+</p>
+<div class="row">
+    <div>
+        @using (Ajax.BeginForm(new AjaxOptions
+        {
+            Url = Url.Action("GetProductsByFilter", "Products"),
+            HttpMethod = "GET",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "products-table"
+        }))
+        {
+
+            @Html.TextBox("Search", ViewBag.CurrentFilter as string, new { @class = "form-control FixLeft", placeholder = "Czego szukasz ??? " })
+
+        }
+    </div>
+</div>
+
+
+
+<div id="products-table">
+    @Html.Action("GetProductsByFilter", "Products")
+</div>
+
+
+
+
+
+@section Scripts
+{
+    <a href="~/Scripts/jquery.unobtrusive-ajax.min.js"></a>
+    <script type="text/javascript">
+
+        $("#Search").keypress(function () {
+            $("#form0").submit();
+        });
+        
+    </script>
+
+
+}
