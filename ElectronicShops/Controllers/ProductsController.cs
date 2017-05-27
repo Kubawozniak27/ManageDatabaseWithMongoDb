@@ -106,7 +106,8 @@ namespace ElectronicShops.Controllers
         [HttpPost]
         public ActionResult Post(PostProduct product)
         {
-            var item = new Product(product);   
+            var item = new Product(product);
+            item.Description = new Description();
             context.Products.Insert(item);
             return RedirectToAction("Index");
         }
@@ -164,21 +165,19 @@ namespace ElectronicShops.Controllers
 
 
         [HttpGet]
-        public ActionResult PostDescription()
+        public ActionResult PostDescription(string id)
         {
-
-            return View();
-
+            var product = GetProduct(id);
+            var Description = product.Description;
+            return View(Description);
         }
 
 
         [HttpPost]
-        public ActionResult PostDescription(string id, Description descri)
+        public ActionResult PostDescription(string id, Description description)
         {
             var item = GetProduct(id);
-            Description description = new Description(descri);
             item.Description = description;
-
             context.Products.Save(item);
             return RedirectToAction("Index");
         }

@@ -9,5 +9,18 @@
         <dd>
             @Html.DisplayFor(model => model.Opis)
         </dd>
+
+        @foreach (KeyValuePair<string, string> parameter in Model.Parameters)
+        {
+            if (@parameter.Value != "") {
+                <dt>
+                    @parameter.Key
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => parameter.Value)
+                </dd>
+            }
+         }
     </dl>
 </div>

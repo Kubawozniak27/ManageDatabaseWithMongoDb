@@ -19,6 +19,8 @@ namespace ElectronicShops.Models
         [Display(Name ="Jakość (0-10)")]
         [Range(0,10)]
         public double Quality { get; set; }
+
+        public Description Description { get; set; }
     }
     
 }
