@@ -51,7 +51,7 @@ namespace ElectronicShops.Controllers
             if (!String.IsNullOrEmpty(search))
             {
                 model = model.Where(r =>
-                (/*(CultureInfo.CurrentCulture.CompareInfo.IndexOf(r.Type, search, CompareOptions.IgnoreCase) >= 0) ||*/
+                ((CultureInfo.CurrentCulture.CompareInfo.IndexOf(r.Category.ToString(), search, CompareOptions.IgnoreCase) >= 0) ||
                  (CultureInfo.CurrentCulture.CompareInfo.IndexOf(r.Model, search, CompareOptions.IgnoreCase) >= 0) ||
                   (CultureInfo.CurrentCulture.CompareInfo.IndexOf(r.Producent, search, CompareOptions.IgnoreCase) >= 0))).ToList();
             }
