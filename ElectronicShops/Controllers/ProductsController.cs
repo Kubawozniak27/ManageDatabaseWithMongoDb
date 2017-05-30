@@ -107,7 +107,8 @@ namespace ElectronicShops.Controllers
         public ActionResult Post(PostProduct product)
         {
             var item = new Product(product);
-            item.Description = new Description();
+            Category category = product.Category;
+            item.Description = new Description(category);
             context.Products.Insert(item);
             return RedirectToAction("Index");
         }
